@@ -23,7 +23,8 @@
 export default {
     data() {
       return {
-        labelPosition: 'right',
+        // 顶部对齐
+        labelPosition: 'top',
         formdata: {
           username: '',
           password: ''
@@ -34,4 +35,22 @@ export default {
 </script>
 
 <style>
+.login-wrap{
+    background-color: #324152;
+    /* 垂直居中 */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.login-form{
+    background-color: #ffffff;
+    width: 400px;
+    /* 圆角 */
+    border-radius: 5px;
+    padding: 30px;
+}
+.login-button{
+    width: 100%;
+}
 </style>
