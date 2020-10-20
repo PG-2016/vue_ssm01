@@ -1,5 +1,6 @@
 <template>
     <el-container class="container">
+        <!-- 顶部菜单 -->
         <el-header>
             <el-row>
                 <el-col :span="4">
@@ -16,36 +17,36 @@
             </el-row>
         </el-header>
         <el-container>
+            <!-- 左侧菜单 -->
             <el-aside class="aside" width="200px">
-                <!-- 侧边栏菜单 -->
+                
                 <el-menu
-                    default-active="1"
+                    default-active="users"
                     :router=true
                     :unique-opened=true
                 >
+                    <!-- 用户管理 -->
                     <el-submenu index="1">
-
                         <template slot="title">
                             <i class="el-icon-user-solid"></i>
                             <span>用户管理</span>
                         </template>
 
                         
-                        <el-menu-item index="1-1">
+                        <el-menu-item index="users">
                             <i class="el-icon-folder-opened"></i>
                             <span>用户列表</span>
                         </el-menu-item>
                         
                     </el-submenu>
 
+                    <!-- 权限管理 -->
                     <el-submenu index="2">
-
                         <template slot="title">
                             <i class="el-icon-s-tools"></i>
                             <span>权限管理</span>
                         </template>
 
-                        
                         <el-menu-item index="2-1">
                             <i class="el-icon-coordinate"></i>
                             <span>权限列表</span>
@@ -58,8 +59,8 @@
                         
                     </el-submenu>
 
+                    <!-- 商品管理 -->
                     <el-submenu index="3">
-
                         <template slot="title">
                             <i class="el-icon-s-goods"></i>
                             <span>商品管理</span>
@@ -83,9 +84,44 @@
                         
                     </el-submenu>
 
+
+                    <!-- 订单管理 -->
+                    <el-submenu index="4">
+                        <template slot="title">
+                            <i class="el-icon-s-data"></i>
+                            <span>订单管理</span>
+                        </template>
+
+                        
+                        <el-menu-item index="4-1">
+                            <i class="el-icon-printer"></i>
+                            <span>订单列表</span>
+                        </el-menu-item>
+
+                    </el-submenu>
+
+
+                    <!-- 数据统计 -->
+                    <el-submenu index="5">
+                        <template slot="title">
+                            <i class="el-icon-s-marketing"></i>
+                            <span>数据统计</span>
+                        </template>
+
+                        
+                        <el-menu-item index="4-1">
+                            <i class="el-icon-coin"></i>
+                            <span>数据分析</span>
+                        </el-menu-item>
+
+                    </el-submenu>           
                 </el-menu>
+                
             </el-aside>
-            <el-main class="main">Main</el-main>
+            <!-- 内容区域 -->
+            <el-main class="main">
+                <router-view></router-view>
+            </el-main>
         </el-container>
     </el-container>
 </template>
