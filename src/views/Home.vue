@@ -10,7 +10,7 @@
                 </el-col>
                 <el-col :span="1">
                     <div class="grid-content bg-purple">
-                        <a href="#" class="loginout">退出</a>
+                        <a href="#" class="loginout" @click.prevent="logout()">退出</a>
                     </div>
                 </el-col>
             </el-row>
@@ -100,7 +100,19 @@ export default {
         HelloWorld,
     },
     methods: {
-      
+        logout(){
+            localStorage.removeItem("token");
+            this.$router.push({
+                name: "login"
+            })
+        }
+    },
+    beforeMount () {
+        if(!localStorage.getItem("token")){
+            this.$router.push({
+                name: "login"
+            })
+        }
     }
 };
 </script>
