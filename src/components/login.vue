@@ -11,7 +11,7 @@
         <el-input v-model="formdata.username"></el-input>
       </el-form-item>
       <el-form-item label="密码">
-        <el-input v-model="formdata.password"></el-input>
+        <el-input type="password" v-model="formdata.password"></el-input>
       </el-form-item>
       <el-button @click.prevent="login()" class="login-button" type="primary"
         >登录</el-button
@@ -47,6 +47,10 @@ export default {
         },
       } = res;
       if (status === 200) {
+        // 存储token
+        console.log(data.token);
+        localStorage.setItem("token",data.token);
+        // 跳转页面
         this.$router.push({
             name: "Home"
         })
