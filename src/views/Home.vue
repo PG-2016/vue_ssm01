@@ -16,9 +16,9 @@
                 </el-col>
             </el-row>
         </el-header>
-        <el-container>
+        <el-container >
             <!-- 左侧菜单 -->
-            <el-aside class="aside" width="200px">
+            <el-aside class="aside" width="200px" >
                 
                 <el-menu
                     default-active="users"
